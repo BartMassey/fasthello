@@ -1,0 +1,23 @@
+[package]
+name = "fasthello"
+version = "0.1.0"
+edition = "2018"
+
+[[bin]]
+name = "speedy"
+path = "speedy.rs"
+
+[[bin]]
+name = "fast"
+path = "fast.rs"
+
+[[bin]]
+name = "slow"
+path = "slow.rs"
+
+[[bin]]
+name = "glacial"
+path = "glacial.rs"
+
+[dependencies]
+itoa = "*"
