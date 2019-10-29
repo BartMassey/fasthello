@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2018"
 
 [[bin]]
+name = "turbo"
+path = "turbo.rs"
+
+[[bin]]
 name = "speedy"
 path = "speedy.rs"
 
@@ -19,5 +23,10 @@ path = "slow.rs"
 name = "glacial"
 path = "glacial.rs"
 
+[[bin]]
+name = "mappy"
+path = "mappy.rs"
+
 [dependencies]
 itoa = "*"
+memmap = "*"
