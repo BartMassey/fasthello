@@ -22,3 +22,11 @@ code being measured.
 * `speedy.rs` uses a `BufWriter` atop a raw UNIX `File`. It
   is about 10% faster than the fast version, but is portable
   only to UNIX systems and has an `unsafe` in it.
+
+* `turbo.rs` is a fairly straightforward port of `turbo.c`,
+  which avoids standard library routines for things in favor
+  of hand-calculation. `turbo.rs` is about 60% faster than
+  `speedy.rs` and about 30% slower than `turbo.c`.
+
+* `mappy.rs` is a work-in-progress attempt to use
+  memory-mapped I/O. It doesn't run yet.
