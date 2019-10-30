@@ -1,7 +1,3 @@
-use std::fs::File;
-use std::io::Write;
-use std::os::unix::io::FromRawFd;
-
 fn increase_str_num(input: &mut [u8]) -> usize {
     let input_size = input.len();
     for i in (0..input_size).rev() {
@@ -14,10 +10,8 @@ fn increase_str_num(input: &mut [u8]) -> usize {
     panic!("overflowed input");
 }
 
+#[allow(unused)]
 fn main() {
-    let mut stdout: File = unsafe {
-        FromRawFd::from_raw_fd(1)
-    };
     const BUFSIZ: usize = 8192;
     let mut buffer = Vec::with_capacity(BUFSIZ);
     let mut num = [b'0';12];
@@ -30,9 +24,9 @@ fn main() {
         buffer.extend_from_slice(&num[num.len() - num_len..]);
         buffer.push(b'\t');
         if buffer.len() + LINE_MAX_LEN > BUFSIZ {
-            stdout.write(&buffer).unwrap();
+            nix::unistd::write(1, &buffer);
             buffer.clear();
         }
     }
-    stdout.write(&buffer).unwrap();
+    nix::unistd::write(1, &buffer);
 }
