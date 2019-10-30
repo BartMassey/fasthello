@@ -29,8 +29,8 @@ code being measured.
   `speedy.rs` and about 30% slower than `turbo.c`.
   
 * `turbo.cpp` is another port of `turbo.c` contributed by
-  Hossain Adnan. It's a little faster than `turbo.c` on my
-  box, but the author reports 20% slower.
+  Hossain Adnan. It's comparable in performance, depending
+  on whether you use `gcc` / `clang` / `g++` / `clang++`.
 
 * `mappy.rs` is a work-in-progress attempt to use
   memory-mapped I/O. It doesn't run yet.
