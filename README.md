@@ -27,6 +27,9 @@ code being measured.
   which avoids standard library routines for things in favor
   of hand-calculation. `turbo.rs` is about 60% faster than
   `speedy.rs` and about 30% slower than `turbo.c`.
+  
+* `turbo.c++` is another port of `turbo.c` and it's 20% 
+  slower than `turbo.c`
 
 * `mappy.rs` is a work-in-progress attempt to use
   memory-mapped I/O. It doesn't run yet.
