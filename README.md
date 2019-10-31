@@ -48,42 +48,48 @@ the ones in `target/release/`.
 ### Example
 
 ```
-% hyperfine --warmup 2  ./turbo-c ./turbo-cpp ./target/release/vecbuf ./target/release/fast ./target/release/glacial ./target/release/slow ./target/release/speedy
+ % hyperfine --warmup 2  ./turbo-c ./turbo-cpp ./target/release/vecbuf ./target/release/turbo ./target/release/fast ./target/release/glacial ./target/release/slow ./target/release/speedy
 Benchmark #1: ./turbo-c
-  Time (mean ± σ):     711.1 ms ±   3.6 ms    [User: 697.5 ms, System: 13.2 ms]
-  Range (min … max):   704.5 ms … 715.3 ms    10 runs
+  Time (mean ± σ):     710.9 ms ±   7.7 ms    [User: 693.7 ms, System: 16.7 ms]
+  Range (min … max):   698.5 ms … 720.7 ms    10 runs
  
 Benchmark #2: ./turbo-cpp
-  Time (mean ± σ):     849.5 ms ±   6.1 ms    [User: 832.7 ms, System: 16.3 ms]
-  Range (min … max):   834.4 ms … 856.1 ms    10 runs
+  Time (mean ± σ):     850.5 ms ±   5.2 ms    [User: 831.5 ms, System: 18.5 ms]
+  Range (min … max):   844.8 ms … 862.4 ms    10 runs
  
 Benchmark #3: ./target/release/vecbuf
-  Time (mean ± σ):     986.8 ms ±  12.8 ms    [User: 965.4 ms, System: 21.0 ms]
-  Range (min … max):   961.2 ms … 1009.4 ms    10 runs
+  Time (mean ± σ):     991.0 ms ±   4.8 ms    [User: 973.2 ms, System: 17.3 ms]
+  Range (min … max):   984.0 ms … 998.2 ms    10 runs
  
-Benchmark #4: ./target/release/fast
-  Time (mean ± σ):      2.306 s ±  0.036 s    [User: 2.299 s, System: 0.006 s]
-  Range (min … max):    2.273 s …  2.380 s    10 runs
+Benchmark #4: ./target/release/turbo
+  Time (mean ± σ):      1.273 s ±  0.007 s    [User: 1.256 s, System: 0.016 s]
+  Range (min … max):    1.262 s …  1.283 s    10 runs
  
-Benchmark #5: ./target/release/glacial
-  Time (mean ± σ):      9.075 s ±  0.116 s    [User: 8.926 s, System: 0.145 s]
-  Range (min … max):    8.901 s …  9.237 s    10 runs
+Benchmark #5: ./target/release/fast
+  Time (mean ± σ):      2.305 s ±  0.080 s    [User: 2.297 s, System: 0.007 s]
+  Range (min … max):    2.261 s …  2.486 s    10 runs
  
-Benchmark #6: ./target/release/slow
-  Time (mean ± σ):      5.488 s ±  0.031 s    [User: 5.353 s, System: 0.131 s]
-  Range (min … max):    5.417 s …  5.532 s    10 runs
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
  
-Benchmark #7: ./target/release/speedy
-  Time (mean ± σ):      2.388 s ±  0.022 s    [User: 2.374 s, System: 0.011 s]
-  Range (min … max):    2.367 s …  2.445 s    10 runs
+Benchmark #6: ./target/release/glacial
+  Time (mean ± σ):      9.074 s ±  0.166 s    [User: 8.923 s, System: 0.148 s]
+  Range (min … max):    8.789 s …  9.346 s    10 runs
  
+Benchmark #7: ./target/release/slow
+  Time (mean ± σ):      5.450 s ±  0.035 s    [User: 5.313 s, System: 0.135 s]
+  Range (min … max):    5.369 s …  5.484 s    10 runs
+ 
+Benchmark #8: ./target/release/speedy
+  Time (mean ± σ):      2.394 s ±  0.033 s    [User: 2.386 s, System: 0.007 s]
+  Range (min … max):    2.362 s …  2.452 s    10 runs
  
 Summary
   './turbo-c' ran
-    1.19 ± 0.01 times faster than './turbo-cpp'
+    1.20 ± 0.01 times faster than './turbo-cpp'
     1.39 ± 0.02 times faster than './target/release/vecbuf'
-    3.24 ± 0.05 times faster than './target/release/fast'
-    3.36 ± 0.04 times faster than './target/release/speedy'
-    7.72 ± 0.06 times faster than './target/release/slow'
-   12.76 ± 0.17 times faster than './target/release/glacial'
+    1.79 ± 0.02 times faster than './target/release/turbo'
+    3.24 ± 0.12 times faster than './target/release/fast'
+    3.37 ± 0.06 times faster than './target/release/speedy'
+    7.67 ± 0.10 times faster than './target/release/slow'
+   12.76 ± 0.27 times faster than './target/release/glacial'
 ```
