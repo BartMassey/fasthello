@@ -60,4 +60,4 @@ To run the benchmarks:
 * Say `make bench`
 
 The results will be available in `BENCH.md`. Here are
-[my results](README.md) on a 3.5GHz i7-4770 ("Haswell").
+[my results](BENCH.md) on a 3.5GHz i7-4770 ("Haswell").
