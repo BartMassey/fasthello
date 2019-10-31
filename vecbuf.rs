@@ -44,7 +44,7 @@ fn main() {
     buf.enqueue(b"Hello, 0");
     let mut i = 1;
     const PREFIX_SIZE: usize = 1 + 7; // b"\tHello, ".len();
-    const NUM_LEN: usize = 0; // b"100000000".len();
+    const NUM_LEN: usize = 9; // b"100000000".len();
     while i < TARGET {
         while i < TARGET && BUFSIZ > buf.bytes.len() + PREFIX_SIZE + NUM_LEN {
             push_hello(&mut buf, i);
