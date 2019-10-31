@@ -28,8 +28,8 @@ name = "mappy"
 path = "mappy.rs"
 
 [[bin]]
-name = "vecbuf"
-path = "vecbuf.rs"
+name = "lightning"
+path = "lightning.rs"
 
 [dependencies]
 itoa = "*"

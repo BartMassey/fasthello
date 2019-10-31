@@ -24,6 +24,7 @@ int main() {
     int buf_index = 0;
     const int line_max_len = 17;
     unsigned int i = 0;
+    int n;
  
     const unsigned int target = 100000000;
  
@@ -39,7 +40,11 @@ int main() {
             buffer[buf_index] = '\t';
             ++buf_index;
         }
-        write(STDOUT_FILENO, buffer, buf_index);
+        n = write(STDOUT_FILENO, buffer, buf_index);
+        if (n == -1) {
+            perror("write");
+            return -1;
+        }
         buf_index = 0;
     }
     return 0;

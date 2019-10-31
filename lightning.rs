@@ -12,10 +12,9 @@ impl Buffer {
         }
     }
 
-    #[allow(unused)]
     #[inline(always)]
     pub fn flush(&mut self) {
-        nix::unistd::write(self.fd, &self.bytes);
+        nix::unistd::write(self.fd, &self.bytes).unwrap();
     }
 
     #[inline(always)]
@@ -29,14 +28,12 @@ impl Buffer {
     }
 }
 
-#[allow(unused)]
 #[inline(always)]
 fn push_hello(buf: &mut Buffer, num: u32) {
     buf.enqueue(b"\tHello, ");
-    itoa::write(&mut buf.bytes, num);
+    itoa::write(&mut buf.bytes, num).unwrap();
 }
 
-#[allow(unused)]
 fn main() {
     const BUFSIZ: usize = libc::BUFSIZ as usize;
     const TARGET: u32 = 100_000_000;

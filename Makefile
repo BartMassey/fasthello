@@ -1,4 +1,9 @@
-BINS = turbo-c turbo-cpp
+BINS = ./turbo-c ./lightning-cpp
+BENCHES = \
+  target/release/glacial target/release/slow \
+  target/release/fast target/release/speedy \
+  target/release/turbo ./turbo-c \
+  target/release/lightning ./lightning-cpp
 
 CC = clang
 CPP = clang++
@@ -6,11 +11,14 @@ CFLAGS = -Wall -O3
 
 all: $(BINS)
 
-turbo-c: turbo.c
+./turbo-c: turbo.c
 	$(CC) $(CFLAGS) -o turbo-c turbo.c
 
-turbo-cpp: turbo.cpp
-	$(CPP) $(CFLAGS) -o turbo-cpp turbo.cpp
+./lightning-cpp: lightning.cpp
+	$(CPP) $(CFLAGS) -o lightning-cpp lightning.cpp
+
+bench: $(BENCHES)
+	hyperfine --warmup 2 $(BENCHES) --export-markdown BENCH.md
 
 clean:
 	-rm -f $(BINS)
