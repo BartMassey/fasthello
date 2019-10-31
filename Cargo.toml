@@ -27,6 +27,12 @@ path = "glacial.rs"
 name = "mappy"
 path = "mappy.rs"
 
+[[bin]]
+name = "vecbuf"
+path = "vecbuf.rs"
+
 [dependencies]
 itoa = "*"
 memmap = "*"
+nix = "*"
+libc = "*"
