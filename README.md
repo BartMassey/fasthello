@@ -33,7 +33,7 @@ code being measured.
   of hand-calculation. `turbo.rs` is about 60% faster than
   `speedy.rs`.
   
-* `lightning.cpp` was authored by Github user
+* `lightning.cpp` is a port of `turbo.rs` authored by Github user
   [DEC05EBA](https://github.com/DEC05EBA) and contributed by
   Github user
   [Hossain Adnan](https://github.com/HossainAdnan). It uses
