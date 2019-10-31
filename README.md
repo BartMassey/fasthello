@@ -23,20 +23,28 @@ code being measured.
   is about 10% faster than the fast version, but is portable
   only to UNIX systems and has an `unsafe` in it.
 
+* `turbo.c` is the original inspiration and currently the
+  fastest, a C implementation authored by Github user
+  [DEC05EBA](https://github.com/DEC05EBA). Its speedup
+  tricks are used by the other fast versions here.
+
 * `turbo.rs` is a fairly straightforward port of `turbo.c`,
   which avoids standard library routines for things in favor
   of hand-calculation. `turbo.rs` is about 60% faster than
   `speedy.rs`.
   
-* `lightning.rs` is a port of `lightning.cpp` contributed by
-  Github user [98982872](https://github.com/98982872). It
-  uses a manual buffer currently backed by `std::Vec::<u8>`
-  along with POSIX `write()`. It's comparable in performance
-  to `turbo.rs`.
+* `lightning.cpp` was authored by Github user
+  [DEC05EBA](https://github.com/DEC05EBA) and contributed by
+  Github user
+  [Hossain Adnan](https://github.com/HossainAdnan). It uses
+  a manual buffer. It is comparable in performance to
+  `turbo.c`.
 
-* `lightning.cpp` is contributed by
-  [Hossain Adnan](https://github.com/HossainAdnan). It's
-  comparable in performance to `turbo.c`.
+* `lightning.rs` is a port of `lightning.cpp` contributed by
+  Github user [Hossain Adnan](https://github.com/98982872). It
+  uses a manual buffer currently backed by `std::Vec::<u8>`
+  along with POSIX `write()`. It's about 30% slower than
+  `turbo.rs`.
 
 * `mappy.rs` is a work-in-progress attempt to use
   memory-mapped I/O. It doesn't run yet.
@@ -51,14 +59,17 @@ to increase comparability with Rust's LLVM toolchain.
 
 ## Perfomance Comparison
 
-To run the benchmarks:
+* To run the benchmarks:
 
-* Install [Hyperfine](https://github.com/sharkdp/hyperfine)
-  with `cargo install hyperfine`
+  * Install [Hyperfine](https://github.com/sharkdp/hyperfine)
+    with `cargo install hyperfine`
 
-* Build the Rust benchmarks with `cargo build --release`
+  * Build the Rust benchmarks with `cargo build --release`
 
-* Say `make bench`
+  * Say `make bench`
 
-The results will be available in `BENCH.md`. Here are
-[my results](BENCH.md) on a 3.5GHz i7-4770 ("Haswell").
+  The results will be available in `BENCH.md`. Here are
+  [my results](BENCH.md) on a 3.5GHz i7-4770 ("Haswell").
+
+* To check that the benchmarks produce the same output
+  say `make check`. The `md5sum`s should match.
