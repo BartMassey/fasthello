@@ -26,8 +26,8 @@ fn main() {
     const LINE_MAX_LEN: usize = 17;
     for _ in 0..100_000_000 {
         buffer.extend_from_slice(prefix);
-        num_len = num_len.max(increase_str_num(&mut num));
         buffer.extend_from_slice(&num[num.len() - num_len..]);
+        num_len = num_len.max(increase_str_num(&mut num));
         buffer.push(b'\t');
         if buffer.len() + LINE_MAX_LEN > BUFSIZ {
             stdout.write(&buffer).unwrap();
