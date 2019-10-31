@@ -20,5 +20,8 @@ all: $(BINS)
 bench: $(BENCHES)
 	hyperfine --warmup 2 $(BENCHES) --export-markdown BENCH.md
 
+check: $(BENCHES)
+	@for B in $(BENCHES); do echo -n "$$B "; $$B | md5sum ; done
+
 clean:
 	-rm -f $(BINS)
