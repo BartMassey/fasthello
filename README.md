@@ -31,7 +31,8 @@ code being measured.
 * `lightning.rs` is a port of `lightning.cpp` contributed by
   Github user [98982872](https://github.com/98982872). It
   uses a manual buffer currently backed by `std::Vec::<u8>`
-  along with POSIX `write()`.
+  along with POSIX `write()`. It's comparable in performance
+  to `turbo.rs`.
 
 * `lightning.cpp` is contributed by
   [Hossain Adnan](https://github.com/HossainAdnan). It's
