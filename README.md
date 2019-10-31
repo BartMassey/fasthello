@@ -33,7 +33,7 @@ code being measured.
   on whether you use `gcc` / `clang` / `g++` / `clang++`.
 
 * `vecbuf.rs` uses a manual buffer currently backed by 
-  std::Vec::<u8>. Uses POSIX write to print to STDOUT.
+  `std::Vec::<u8>`. Uses POSIX write to print to STDOUT.
 
 * `mappy.rs` is a work-in-progress attempt to use
   memory-mapped I/O. It doesn't run yet.
