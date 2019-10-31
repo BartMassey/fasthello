@@ -28,6 +28,10 @@ name = "lightning"
 path = "lightning.rs"
 
 [[bin]]
+name = "ludicrous"
+path = "ludicrous.rs"
+
+[[bin]]
 name = "serious"
 path = "serious.rs"
 

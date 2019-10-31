@@ -4,6 +4,7 @@ BENCHES = \
   target/release/fast target/release/speedy \
   target/release/turbo ./turbo-c \
   target/release/lightning ./lightning-cpp \
+  target/release/ludicrous \
   target/release/serious
 
 CC = clang

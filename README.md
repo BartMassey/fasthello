@@ -24,8 +24,8 @@ code being measured.
   only to UNIX systems and has an `unsafe` in it.
 
 * `turbo.c` is the original inspiration and currently the
-  fastest, a C implementation authored by Github user
-  [DEC05EBA](https://github.com/DEC05EBA). Its speedup
+  fastest, a C implementation authored by
+  [Aleksi Lindeman](https://github.com/DEC05EBA). Its speedup
   tricks are used by the other fast versions here.
 
 * `turbo.rs` is a fairly straightforward port of `turbo.c`,
@@ -33,18 +33,21 @@ code being measured.
   of hand-calculation. `turbo.rs` is about 60% faster than
   `speedy.rs`.
   
-* `lightning.cpp` is a port of `turbo.rs` authored by Github user
-  [DEC05EBA](https://github.com/DEC05EBA) and contributed by
-  Github user
+* `lightning.cpp` is a port of `turbo.rs` authored by
+  [Aleksi Lindeman](https://github.com/DEC05EBA) and contributed by
   [Hossain Adnan](https://github.com/HossainAdnan). It uses
   a manual buffer. It is comparable in performance to
   `turbo.c`.
 
 * `lightning.rs` is a port of `lightning.cpp` contributed by
-  Github user [Hossain Adnan](https://github.com/98982872). It
+  [Hossain Adnan](https://github.com/98982872). It
   uses a manual buffer currently backed by `std::Vec::<u8>`
   along with POSIX `write()`. It's about 30% slower than
   `turbo.rs`.
+
+* `ludicrous.rs` is a version by
+  [Aleksi Lindeman](https://github.com/DEC05EBA) that uses a
+  handmade buffer. It is the same speed as `turbo.c`.
 
 * `serious.rs` (not actually serious) is a C-like Rust
   implementation with tons of `unsafe` employing all the
