@@ -26,19 +26,20 @@ int main() {
     unsigned int i = 0;
     int n;
  
+    int num_len_increase = 1;
     const unsigned int target = 100000000;
  
     while(i < target) {
         while(buf_index < sizeof(buffer) - line_max_len && i < target) {
             memcpy(buffer + buf_index, prefix, sizeof(prefix) - 1);
             buf_index += sizeof(prefix) - 1;
-            int num_len_increase = increase_str_num(num, sizeof(num));
             num_len = MAX(num_len, num_len_increase);
             memcpy(buffer + buf_index, num + sizeof(num) - num_len, num_len);
             buf_index += num_len;
             ++i;
             buffer[buf_index] = '\t';
             ++buf_index;
+            num_len_increase = increase_str_num(num, sizeof(num));
         }
         n = write(STDOUT_FILENO, buffer, buf_index);
         if (n == -1) {
