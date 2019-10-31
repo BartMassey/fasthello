@@ -46,6 +46,12 @@ code being measured.
   along with POSIX `write()`. It's about 30% slower than
   `turbo.rs`.
 
+* `serious.rs` (not actually serious) is a C-like Rust
+  implementation with tons of `unsafe` employing all the
+  tricks. It is the same speed as `turbo.c`, which is
+  reasonable given that it's even uglier and no safer.
+  "You can write FORTRAN in any language."
+
 * `mappy.rs` is a work-in-progress attempt to use
   memory-mapped I/O. It doesn't run yet.
 

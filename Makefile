@@ -3,7 +3,8 @@ BENCHES = \
   target/release/glacial target/release/slow \
   target/release/fast target/release/speedy \
   target/release/turbo ./turbo-c \
-  target/release/lightning ./lightning-cpp
+  target/release/lightning ./lightning-cpp \
+  target/release/serious
 
 CC = clang
 CPP = clang++
