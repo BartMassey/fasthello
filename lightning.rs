@@ -42,15 +42,19 @@ fn main() {
     let mut i = 1;
     const PREFIX_SIZE: usize = 1 + 7; // b"\tHello, ".len();
     const NUM_LEN: usize = 9; // b"100000000".len();
-    while i < TARGET {
+    'done: while i < TARGET {
         while i < TARGET && BUFSIZ > buf.bytes.len() + PREFIX_SIZE + NUM_LEN {
             push_hello(&mut buf, i);
             i += 1;
+            if i >= TARGET {
+                break 'done;
+            }
         }
         buf.flush();
         buf.clear();
         push_hello(&mut buf, i);
         i += 1;
     }
+    buf.enqueue(b"\t");
     buf.flush();
 }
