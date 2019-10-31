@@ -69,8 +69,6 @@ Benchmark #5: ./target/release/fast
   Time (mean ± σ):      2.305 s ±  0.080 s    [User: 2.297 s, System: 0.007 s]
   Range (min … max):    2.261 s …  2.486 s    10 runs
  
-  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
- 
 Benchmark #6: ./target/release/glacial
   Time (mean ± σ):      9.074 s ±  0.166 s    [User: 8.923 s, System: 0.148 s]
   Range (min … max):    8.789 s …  9.346 s    10 runs
