@@ -40,8 +40,8 @@ int main() {
   const size_t LINE_MAX_LEN = 17;
   for (unsigned int i = 0; i < 100'000'000; ++i) {
     buffer.extend(prefix, sizeof(prefix) - 1);
-    num_len = std::max(num_len, increase_str_num(num, sizeof(num)));
-    buffer.extend(num + sizeof(num) - num_len, num_len);
+    buffer.extend(num + sizeof(num) - 1 - num_len, num_len);
+    num_len = std::max(num_len, increase_str_num(num, sizeof(num) - 1));
     buffer.push('\t');
     if (buffer.size() + LINE_MAX_LEN > BUFSIZ) {
       write(STDOUT_FILENO, buffer.data, buffer.size());
