@@ -4,3 +4,4 @@ Cargo.lock
 /lightning-cpp
 /turbo-c
 /.vscode
+/threaded-cpp
