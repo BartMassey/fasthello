@@ -48,7 +48,7 @@ fn main() {
     let mut buf = WriteBuffer::new(BUFSIZ, libc::STDOUT_FILENO);
     buf.enqueue_bytes(b"Hello, 0");
 
-    for i in 0..TARGET {
+    for i in 1..TARGET {
         buf.enqueue_bytes(PREFIX);
         let num_len = itoa::write(&mut buf.bytes, i).unwrap();
         if BUFSIZ < buf.len() + PREFIX_SIZE + num_len {
