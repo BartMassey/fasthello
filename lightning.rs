@@ -8,7 +8,7 @@ impl Buffer {
     pub fn new(byte_capacity: usize, fd: std::os::unix::io::RawFd) -> Self {
         Self {
             bytes: Vec::with_capacity(byte_capacity),
-            fd: fd,
+            fd,
         }
     }
 

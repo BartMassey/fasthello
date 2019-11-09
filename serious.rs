@@ -39,9 +39,9 @@ fn main() {
     for _ in 0..100_000_000 {
         unsafe {
             prefixp.copy_to_nonoverlapping(bufp, nprefix);
-            bufp = bufp.offset(nprefix as isize);
+            bufp = bufp.add(nprefix);
             nump.copy_to_nonoverlapping(bufp, num_len);
-            bufp = bufp.offset(num_len as isize);
+            bufp = bufp.add(num_len);
         }
         let l = increase_str_num(&mut num);
         if l > num_len {
