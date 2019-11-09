@@ -16,12 +16,10 @@ fn increase_str_num(input: &mut [u8]) -> usize {
 
 fn main() {
     let stdout = AsRawFd::as_raw_fd(&stdout());
-    let mut stdout: File = unsafe {
-        FromRawFd::from_raw_fd(stdout)
-    };
+    let mut stdout: File = unsafe { FromRawFd::from_raw_fd(stdout) };
     const BUFSIZ: usize = 8192;
     let mut buffer = Vec::with_capacity(BUFSIZ);
-    let mut num = [b'0';12];
+    let mut num = [b'0'; 12];
     let mut num_len = 1;
     let prefix = b"Hello, ";
     const LINE_MAX_LEN: usize = 17;
