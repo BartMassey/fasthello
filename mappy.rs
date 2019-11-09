@@ -7,9 +7,7 @@ use memmap::{MmapMut, MmapOptions};
 
 fn main() {
     let stdout = AsRawFd::as_raw_fd(&stdout());
-    let stdout: File = unsafe {
-        FromRawFd::from_raw_fd(stdout)
-    };
+    let stdout: File = unsafe { FromRawFd::from_raw_fd(stdout) };
     let mut mmap_options = MmapOptions::new();
     let mut mm_mut: MmapMut = unsafe {
         mmap_options.len(128).map_mut(&stdout).expect("map_mut")

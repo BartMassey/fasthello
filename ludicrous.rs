@@ -18,19 +18,20 @@ const BUFSIZ: usize = 8192;
 
 struct Buffer {
     data: [u8; BUFSIZ],
-    index: usize
+    index: usize,
 }
 
 impl Buffer {
     pub fn new() -> Self {
         Self {
             data: [0; BUFSIZ],
-            index: 0
+            index: 0,
         }
     }
 
     pub fn extend(&mut self, str: &[u8]) {
-        self.data[self.index..self.index+str.len()].copy_from_slice(str);
+        self.data[self.index..self.index + str.len()]
+            .copy_from_slice(str);
         self.index += str.len();
     }
 
@@ -50,11 +51,9 @@ impl Buffer {
 
 fn main() {
     let stdout = AsRawFd::as_raw_fd(&stdout());
-    let mut stdout: File = unsafe {
-        FromRawFd::from_raw_fd(stdout)
-    };
+    let mut stdout: File = unsafe { FromRawFd::from_raw_fd(stdout) };
     let mut buffer = Buffer::new();
-    let mut num = [b'0';12];
+    let mut num = [b'0'; 12];
     let mut num_len = 1;
     let prefix = b"Hello, ";
     const LINE_MAX_LEN: usize = 17;
@@ -64,7 +63,8 @@ fn main() {
         num_len = num_len.max(increase_str_num(&mut num));
         buffer.push(b'\t');
         if buffer.size() + LINE_MAX_LEN > BUFSIZ {
-            let _ = stdout.write(&buffer.data[..buffer.size()]).unwrap();
+            let _ =
+                stdout.write(&buffer.data[..buffer.size()]).unwrap();
             buffer.clear();
         }
     }

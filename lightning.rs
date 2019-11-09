@@ -5,7 +5,10 @@ pub struct Buffer {
 
 impl Buffer {
     #[inline(always)]
-    pub fn new(byte_capacity: usize, fd: std::os::unix::io::RawFd) -> Self {
+    pub fn new(
+        byte_capacity: usize,
+        fd: std::os::unix::io::RawFd,
+    ) -> Self {
         Self {
             bytes: Vec::with_capacity(byte_capacity),
             fd,
@@ -43,7 +46,9 @@ fn main() {
     const PREFIX_SIZE: usize = 1 + 7; // b"\tHello, ".len();
     const NUM_LEN: usize = 9; // b"100000000".len();
     'done: while i < TARGET {
-        while i < TARGET && BUFSIZ > buf.bytes.len() + PREFIX_SIZE + NUM_LEN {
+        while i < TARGET
+            && BUFSIZ > buf.bytes.len() + PREFIX_SIZE + NUM_LEN
+        {
             push_hello(&mut buf, i);
             i += 1;
             if i >= TARGET {
