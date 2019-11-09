@@ -1,6 +1,6 @@
 use std::fs::File;
-use std::io::Write;
-use std::os::unix::io::FromRawFd;
+use std::io::{stdout, Write};
+use std::os::unix::io::{AsRawFd, FromRawFd};
 
 const BUFSIZ: usize = 8192;
 const DIGITS: usize = 12;
@@ -22,8 +22,9 @@ fn increase_str_num(input: &mut [u8;DIGITS]) -> usize {
 }
 
 fn main() {
+    let stdout = AsRawFd::as_raw_fd(&stdout());
     let mut stdout: File = unsafe {
-        FromRawFd::from_raw_fd(1)
+        FromRawFd::from_raw_fd(stdout)
     };
     let mut buffer = [0u8;BUFSIZ];
     let buf0p: * mut u8 = &mut buffer[0];
