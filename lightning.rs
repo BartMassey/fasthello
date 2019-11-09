@@ -14,7 +14,7 @@ impl Buffer {
 
     #[inline(always)]
     pub fn flush(&mut self) {
-        nix::unistd::write(self.fd, &self.bytes).unwrap();
+        let _ = nix::unistd::write(self.fd, &self.bytes).unwrap();
     }
 
     #[inline(always)]
@@ -31,7 +31,7 @@ impl Buffer {
 #[inline(always)]
 fn push_hello(buf: &mut Buffer, num: u32) {
     buf.enqueue(b"\tHello, ");
-    itoa::write(&mut buf.bytes, num).unwrap();
+    let _ = itoa::write(&mut buf.bytes, num).unwrap();
 }
 
 fn main() {

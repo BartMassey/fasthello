@@ -16,9 +16,9 @@ fn main() {
     };
     let mut bytes = [0u8; 9];
     for i in 0..10 {
-        mm_mut.deref_mut().write(b"Hello, ").unwrap();
-        itoa::write(&mut bytes[..], i).unwrap();
-        mm_mut.deref_mut().write(&bytes).unwrap();
-        mm_mut.deref_mut().write(b"\t").unwrap();
+        let _ = mm_mut.deref_mut().write(b"Hello, ").unwrap();
+        let _ = itoa::write(&mut bytes[..], i).unwrap();
+        let _ = mm_mut.deref_mut().write(&bytes).unwrap();
+        let _ = mm_mut.deref_mut().write(b"\t").unwrap();
     }
 }

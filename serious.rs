@@ -52,10 +52,10 @@ fn main() {
         unsafe {bufp = bufp.offset(1)};
         let fill_len = bufp as usize - buf0p as usize;
         if fill_len + LINE_MAX_LEN > BUFSIZ {
-            stdout.write(&buffer[..fill_len]).unwrap();
+            let _ = stdout.write(&buffer[..fill_len]).unwrap();
             bufp = buf0p;
         }
     }
     let fill_len = bufp as usize - buf0p as usize;
-    stdout.write(&buffer[..fill_len]).unwrap();
+    let _ = stdout.write(&buffer[..fill_len]).unwrap();
 }

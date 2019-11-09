@@ -31,9 +31,9 @@ fn main() {
         num_len = num_len.max(increase_str_num(&mut num));
         buffer.push(b'\t');
         if buffer.len() + LINE_MAX_LEN > BUFSIZ {
-            stdout.write(&buffer).unwrap();
+            let _ = stdout.write(&buffer).unwrap();
             buffer.clear();
         }
     }
-    stdout.write(&buffer).unwrap();
+    let _ = stdout.write(&buffer).unwrap();
 }
