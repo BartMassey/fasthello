@@ -5,8 +5,8 @@ fn main() {
     let lock = stdout.lock();
     let mut buf = std::io::BufWriter::with_capacity(32*1024, lock);
     for i in 0..100_000_000 {
-        buf.write(b"Hello, ").unwrap();
-        itoa::write(&mut buf, i).unwrap();
-        buf.write(b"\t").unwrap();
+        let _ = buf.write(b"Hello, ").unwrap();
+        let _ = itoa::write(&mut buf, i).unwrap();
+        let _ = buf.write(b"\t").unwrap();
     }
 }
