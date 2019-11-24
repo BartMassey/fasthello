@@ -25,7 +25,7 @@ code being measured.
 
 * `turbo.c` is the original inspiration and currently the
   fastest, a C implementation authored by
-  [Aleksi Lindeman](https://github.com/DEC05EBA). Its speedup
+  [DEC05EBA](https://github.com/DEC05EBA). Its speedup
   tricks are used by the other fast versions here.
 
 * `turbo.rs` is a fairly straightforward port of `turbo.c`,
@@ -34,7 +34,7 @@ code being measured.
   `speedy.rs`.
   
 * `lightning.cpp` is a port of `turbo.rs` authored by
-  [Aleksi Lindeman](https://github.com/DEC05EBA) and contributed by
+  [DEC05EBA](https://github.com/DEC05EBA) and contributed by
   [Hossain Adnan](https://github.com/HossainAdnan). It uses
   a manual buffer. It is comparable in performance to
   `turbo.c`.
@@ -46,7 +46,7 @@ code being measured.
   `turbo.rs`.
 
 * `ludicrous.rs` is a version by
-  [Aleksi Lindeman](https://github.com/DEC05EBA) that uses a
+  [DEC05EBA](https://github.com/DEC05EBA) that uses a
   handmade buffer. It is the same speed as `turbo.c`.
 
 * `serious.rs` (not actually serious) is a C-like Rust
