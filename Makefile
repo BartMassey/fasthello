@@ -28,3 +28,4 @@ check: $(BENCHES)
 
 clean:
 	-rm -f $(BINS)
+	-cargo clean
