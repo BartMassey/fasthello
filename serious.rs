@@ -33,7 +33,7 @@ fn main() {
     let prefix = b"Hello, ";
     let prefixp: *const u8 = &prefix[0];
     let nprefix = prefix.len();
-    const LINE_MAX_LEN: usize = 17;
+    let line_max_len = prefix.len() + DIGITS + 1;
     for _ in 0..100_000_000 {
         unsafe {
             prefixp.copy_to_nonoverlapping(bufp, nprefix);
@@ -49,7 +49,7 @@ fn main() {
         unsafe { *bufp = b'\t' };
         unsafe { bufp = bufp.offset(1) };
         let fill_len = bufp as usize - buf0p as usize;
-        if fill_len + LINE_MAX_LEN > BUFSIZ {
+        if fill_len + line_max_len > BUFSIZ {
             let _ = stdout.write(&buffer[..fill_len]).unwrap();
             bufp = buf0p;
         }
