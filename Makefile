@@ -12,6 +12,7 @@ CPP = clang++
 CFLAGS = -Wall -O3
 
 all: $(BINS)
+	cargo build --release
 
 ./turbo-c: turbo.c
 	$(CC) $(CFLAGS) -o turbo-c turbo.c

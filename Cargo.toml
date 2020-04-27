@@ -35,12 +35,7 @@ path = "ludicrous.rs"
 name = "serious"
 path = "serious.rs"
 
-[[bin]]
-name = "mappy"
-path = "mappy.rs"
-
 [dependencies]
 itoa = "0.4"
-memmap = "0.7"
 nix = "0.15"
 libc = "0.2"

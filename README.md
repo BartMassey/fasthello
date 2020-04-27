@@ -55,9 +55,6 @@ code being measured.
   reasonable given that it's even uglier and no safer.
   "You can write FORTRAN in any language."
 
-* `mappy.rs` is a work-in-progress attempt to use
-  memory-mapped I/O. It doesn't run yet.
-
 Many of these will run only on a POSIX system. I have tried
 them only on Linux.
 
