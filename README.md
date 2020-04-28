@@ -20,18 +20,18 @@ code being measured.
   the version that is 2× faster than the slow version.
 
 * `speedy.rs` uses a `BufWriter` atop a raw UNIX `File`. It
-  is about 10% faster than the fast version, but is portable
+  is a little faster than the fast version, but is portable
   only to UNIX systems and has an `unsafe` in it.
 
-* `turbo.c` is the original inspiration and currently the
+* `turbo.c` is the original inspiration and about the
   fastest, a C implementation authored by
   [DEC05EBA](https://github.com/DEC05EBA). Its speedup
   tricks are used by the other fast versions here.
 
 * `turbo.rs` is a fairly straightforward port of `turbo.c`,
   which avoids standard library routines for things in favor
-  of hand-calculation. `turbo.rs` is about 60% faster than
-  `speedy.rs`.
+  of hand-calculation. `turbo.rs` is about 30% slower than
+  `turbo.c`.
   
 * `lightning.cpp` is a port of `turbo.rs` authored by
   [DEC05EBA](https://github.com/DEC05EBA) and contributed by
@@ -47,13 +47,14 @@ code being measured.
 
 * `ludicrous.rs` is a version by
   [DEC05EBA](https://github.com/DEC05EBA) that uses a
-  handmade buffer. It is the same speed as `turbo.c`.
+  handmade buffer. It is about 10% slower than `turbo.c`.
 
 * `serious.rs` (not actually serious) is a C-like Rust
   implementation with tons of `unsafe` employing all the
-  tricks. It is the same speed as `turbo.c`, which is
-  reasonable given that it's even uglier and no safer.
-  "You can write FORTRAN in any language."
+  tricks. It is the same speed as `turbo.c` (currently
+  insignificantly faster, actually), which is reasonable
+  given that it's even uglier and no safer.  "You can write
+  FORTRAN in any language."
 
 Many of these will run only on a POSIX system. I have tried
 them only on Linux.
@@ -75,7 +76,8 @@ to increase comparability with Rust's LLVM toolchain.
   * Say `make bench`
 
   The results will be available in `BENCH.md`. Here are
-  [my results](BENCH.md) on a 3.5GHz i7-4770 ("Haswell").
+  [my results](BENCH.md) on a 3.5GHz i7-4770 ("Haswell")
+  with `rustc` 1.42.0 and `clang` / `clang++` 9.0.1-12.
 
 * To check that the benchmarks produce the same output
   say `make check`. The `md5sum`s should match.
