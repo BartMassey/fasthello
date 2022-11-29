@@ -76,8 +76,10 @@ to increase comparability with Rust's LLVM toolchain.
   * Say `make bench`
 
   The results will be available in `BENCH.md`. Here are
-  [my results](BENCH.md) on a 3.5GHz i7-4770 ("Haswell")
-  with `rustc` 1.42.0 and `clang` / `clang++` 9.0.1-12.
+  [my results](BENCH.md) from 2022-11-29 on an AMD Ryzen 9
+  3900X with `rustc` 1.64.0 and `clang` / `clang++` 14.0.6.
+  They are not significantly different than when run several
+  years ago on older hardware.
 
 * To check that the benchmarks produce the same output
   say `make check`. The `md5sum`s should match.

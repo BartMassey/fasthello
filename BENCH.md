@@ -1,12 +1,12 @@
 | Command | Mean [s] | Min [s] | Max [s] | Relative |
 |:---|---:|---:|---:|---:|
-| `target/release/glacial` | 9.621 ± 0.172 | 9.439 | 9.902 | 17.12 ± 0.38 |
-| `target/release/slow` | 4.305 ± 0.026 | 4.257 | 4.335 | 7.66 ± 0.11 |
-| `target/release/fast` | 1.940 ± 0.034 | 1.898 | 2.026 | 3.45 ± 0.08 |
-| `target/release/speedy` | 1.944 ± 0.021 | 1.922 | 1.986 | 3.46 ± 0.06 |
-| `target/release/turbo` | 0.719 ± 0.008 | 0.704 | 0.731 | 1.28 ± 0.02 |
-| `./turbo-c` | 0.581 ± 0.005 | 0.574 | 0.590 | 1.03 ± 0.02 |
-| `target/release/lightning` | 0.903 ± 0.008 | 0.889 | 0.916 | 1.61 ± 0.03 |
-| `./lightning-cpp` | 0.573 ± 0.010 | 0.564 | 0.598 | 1.02 ± 0.02 |
-| `target/release/ludicrous` | 0.609 ± 0.009 | 0.600 | 0.626 | 1.08 ± 0.02 |
-| `target/release/serious` | 0.562 ± 0.007 | 0.550 | 0.572 | 1.00 |
+| `target/release/glacial` | 4.571 ± 0.105 | 4.475 | 4.741 | 9.27 ± 0.26 |
+| `target/release/slow` | 2.193 ± 0.149 | 2.101 | 2.595 | 4.45 ± 0.31 |
+| `target/release/fast` | 0.850 ± 0.015 | 0.842 | 0.893 | 1.72 ± 0.04 |
+| `target/release/speedy` | 0.836 ± 0.005 | 0.830 | 0.844 | 1.69 ± 0.03 |
+| `target/release/turbo` | 0.590 ± 0.080 | 0.501 | 0.693 | 1.20 ± 0.16 |
+| `./turbo-c` | 0.493 ± 0.008 | 0.487 | 0.511 | 1.00 |
+| `target/release/lightning` | 0.678 ± 0.017 | 0.663 | 0.704 | 1.37 ± 0.04 |
+| `./lightning-cpp` | 0.602 ± 0.012 | 0.592 | 0.628 | 1.22 ± 0.03 |
+| `target/release/ludicrous` | 0.620 ± 0.083 | 0.556 | 0.765 | 1.26 ± 0.17 |
+| `target/release/serious` | 0.548 ± 0.009 | 0.532 | 0.557 | 1.11 ± 0.03 |
