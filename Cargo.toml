@@ -35,6 +35,14 @@ path = "ludicrous.rs"
 name = "serious"
 path = "serious.rs"
 
+[[bin]]
+name = "dumbest"
+path = "dumbest.rs"
+
+[[bin]]
+name = "naïve"
+path = "naïve.rs"
+
 [dependencies]
 itoa = "0.4"
 nix = "0.15"

@@ -1,5 +1,7 @@
-BINS = ./turbo-c ./lightning-cpp
+BINS = ./naïve-c ./turbo-c ./lightning-cpp
 BENCHES = \
+  target/release/naïve \
+  target/release/dumbest \
   target/release/glacial target/release/slow \
   target/release/fast target/release/speedy \
   target/release/turbo ./turbo-c \
@@ -13,6 +15,9 @@ CFLAGS = -Wall -O3
 
 all: $(BINS)
 	cargo build --release
+
+./naïve-c: naïve.c
+	$(CC) $(CFLAGS) -o naïve-c naïve.c
 
 ./turbo-c: turbo.c
 	$(CC) $(CFLAGS) -o turbo-c turbo.c
